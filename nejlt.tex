@@ -59,6 +59,27 @@ Titles should have correct capitalisation; forcing sentence case is not always a
 
 Do not use an arXiv reference where the paper has also appeared in a peer-reviewed venue. In that case, use the peer-reviewed reference.
 
+\section{Non-English worked examples}
+
+The lagnuage of the journal is English. 
+American English and English English are both fine, as are other spelling and formulation variants.
+When discussing non-English languages, please provide translations into English.
+When providing and discussing important worked examples, please include interlinear glosses.
+The Leipzig style is preferred, https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf. There are LaTeX packages that support this.
+
+\section{Non-English character rendering}
+
+To render non-English characters, use your favourite method that retains the journal layout and font. Past authors have had success with using XeTeX and the \texttt{libertine} package, and defining a block like:
+
+\begin{verbatim}
+\usepackage{libertine}
+\newfontfamily\hebfont{Frank Ruehl CLM}
+\newcommand{\heb}[1]{{\hebfont #1}}
+\setmainfont{Linux Biolinum O}
+\end{verbatim}
+
+where \texttt{{\textbackslash}heb} can then be used to wrap text and apply the specified font.
+
 \section{Lipsum Padding}
 
 See~\newcite{inie2020interaction}. \lipsum[4] Details are well-known~\cite{devlin2014fast}.
