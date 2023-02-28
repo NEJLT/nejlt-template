@@ -113,6 +113,22 @@
 % confidential footer for draft
   \fancyfoot[C]{\sc Confidential NEJLT review copy. Do not distribute.}
 \fi
+\fancyfoot[R]{\thepage}
+
+\fancypagestyle{title}{
+  \fancyhf{}
+  \fancyfoot[R]{\thepage}  
+  \ifcrversion
+    \fancyfoot[C]{Northern European Journal of Language Technology}
+  \else
+  % confidential footer for draft
+    \fancyfoot[C]{\sc Confidential NEJLT review copy. Do not distribute.}
+  \fi
+  \fancyhead{~}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{.8pt}% or however thick
+}
+
 
 
 %% LINE NUMBERS FOR DRAFTING
