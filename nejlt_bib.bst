@@ -880,6 +880,7 @@ FUNCTION {format.chapter}
       if$
       chapter tie.or.space.prefix
       "chapter" bibinfo.check
+      emphasize
       * *
     }
   if$
