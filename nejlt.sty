@@ -1,7 +1,7 @@
 %%% NEJLT style file
 %%% (c) Leon Derczynski 2020,2023
 %%%     hints from from ACM Large, CVPR, EMNLP2020, Political Analysis, LREC
-%%% Bibliography is URL-free ACL version (hyperref is a time sink)
+%%% Bibliography is URL-free ACL version
 
 %% OPTIONS
 % draft mode
@@ -21,6 +21,7 @@
 \RequirePackage[libertine]{newtxmath}
 % colour enabled
 \RequirePackage{xcolor}
+\definecolor{nejltblue}{RGB}{63,81,181}
 % simplify use of complex input glyphs
 \usepackage[utf8]{inputenc}
 % set page size and margins
@@ -35,6 +36,8 @@
 \flushbottom
 % don't break lines unless we really have to
 \sloppy
+\RequirePackage[]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=nejltblue,filecolor=nejltblue,urlcolor=nejltblue,citecolor=nejltblue,anchorcolor=nejltblue}
 
 %% COLUMNS
 \twocolumn
