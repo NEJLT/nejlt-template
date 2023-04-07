@@ -94,10 +94,6 @@
 \def\@maketitle{
 %\vbox to \titlebox
  \hsize\textwidth \linewidth\hsize 
- \ifletter
-  {\centering \color{nejltblue}Northern European Journal of Language Technology: Letter \par}
-  \vskip 4mm
- \fi
  {\LARGE \@title \par}
  \vskip 10mm 
  {
@@ -123,6 +119,9 @@
 \renewcommand{\footrulewidth}{.8pt}
 \ifcrversion
   \fancyfoot[C]{Northern European Journal of Language Technology}
+  \ifletter
+    \fancyfoot[C]{\color{nejltblue}Northern European Journal of Language Technology}
+  \fi
 \else
 % confidential footer for draft
   \fancyfoot[C]{\sc Confidential NEJLT review copy. Do not distribute.}
@@ -134,6 +133,9 @@
   \fancyfoot[R]{\thepage}  
   \ifcrversion
     \fancyfoot[C]{Northern European Journal of Language Technology}
+    \ifletter
+      \fancyfoot[C]{\color{nejltblue}Northern European Journal of Language Technology}
+    \fi
   \else
   % confidential footer for draft
     \fancyfoot[C]{\sc Confidential NEJLT review copy. Do not distribute.}
