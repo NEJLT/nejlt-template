@@ -7,7 +7,10 @@
 % draft mode
 \newif\ifcrversion
 \crversionfalse
+\newif\ifletter
+\letterfalse
 \DeclareOption{final}{\crversiontrue}
+\DeclareOption{letter}{\lettertrue}
 % end options segment
 \ProcessOptions
 
@@ -65,11 +68,15 @@
  \end{itemize}
 }
 % abstract box
+\def\abstractname{Abstract}
+\ifletter
+  \def\abstractname{ Letter abstract }
+\fi
 \def\abstract#1{\gdef\@abstract{
   {
     \setlength{\baselineskip}{10pt}
     \noindent\rule{\textwidth}{0.2pt} 
-    \parbox{\textwidth}{\vskip 3mm \small {\bf Abstract } #1 \vskip 3mm \par}
+    \parbox{\textwidth}{\vskip 3mm \small {\bf \color{nejltblue}\abstractname } #1 \vskip 3mm \par}
     \noindent\rule{\textwidth}{0.2pt}
   }
 }}
@@ -87,6 +94,10 @@
 \def\@maketitle{
 %\vbox to \titlebox
  \hsize\textwidth \linewidth\hsize 
+ \ifletter
+  {\centering \color{nejltblue}Northern European Journal of Language Technology: Letter \par}
+  \vskip 4mm
+ \fi
  {\LARGE \@title \par}
  \vskip 10mm 
  {
