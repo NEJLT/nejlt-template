@@ -54,7 +54,7 @@
 \newcommand\newcite{\citet}
 
 %% TITLE BLOCK
-\newlength\titlebox 
+\newlength\titlebox
 \setlength\titlebox{50mm}
 % author blanking in drafts
 \newcommand\outauthor{
@@ -75,12 +75,12 @@
 \def\abstract#1{\gdef\@abstract{
   {
     \setlength{\baselineskip}{10pt}
-    \noindent\rule{\textwidth}{0.2pt} 
+    \noindent\rule{\textwidth}{0.2pt}
     \parbox{\textwidth}{\vskip 3mm \small {\bf \color{nejltblue}\abstractname } #1 \vskip 3mm \par}
     \noindent\rule{\textwidth}{0.2pt}
   }
 }}
-% title 
+% title
 \def\maketitle{\par
  \begingroup
    \def\thefootnote{\fnsymbol{footnote}}
@@ -93,9 +93,9 @@
 % put everything in maketitle
 \def\@maketitle{
 %\vbox to \titlebox
- \hsize\textwidth \linewidth\hsize 
+ \hsize\textwidth \linewidth\hsize
  {\LARGE \@title \par}
- \vskip 10mm 
+ \vskip 10mm
  {
   \def\and{\item[]}
   \hbox to \linewidth
@@ -103,7 +103,7 @@
   {\large \outauthor}
   }
   \vskip 2mm
-  \@abstract 
+  \@abstract
   \vskip 17mm
 }
 
@@ -130,7 +130,7 @@
 
 \fancypagestyle{title}{
   \fancyhf{}
-  \fancyfoot[R]{\thepage}  
+  \fancyfoot[R]{\thepage}
   \ifcrversion
     \fancyfoot[C]{Northern European Journal of Language Technology}
     \ifletter
