@@ -25,6 +25,7 @@
 % colour enabled
 \RequirePackage{xcolor}
 \definecolor{nejltblue}{RGB}{63,81,181}
+\definecolor{flagred}{RGB}{198, 12, 48}
 % simplify use of complex input glyphs
 \usepackage[utf8]{inputenc}
 % set page size and margins
@@ -33,7 +34,8 @@
     textwidth=170mm,
     textheight=235mm,
     footskip=12mm,
-    voffset=10mm
+    voffset=10mm,
+    headsep=14mm,
 }
 % try to balance page end
 \flushbottom
@@ -115,32 +117,32 @@
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
+\newcommand\headtitle{UNDEFINED}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{.8pt}
+\fancyhead[C]{\itshape\headtitle}
 \ifcrversion
   \fancyfoot[C]{Northern European Journal of Language Technology}
-  \ifletter
-    \fancyfoot[C]{\color{nejltblue}Northern European Journal of Language Technology}
-  \fi
 \else
-% confidential footer for draft
-  \fancyfoot[C]{\sc Confidential NEJLT review copy. Do not distribute.}
+  % confidential footer for draft
+  \fancyfoot[C]{\sc\color{flagred} Confidential NEJLT review copy. Do not distribute.}
+  % page numbers only appear on the draft — are added by the editor for final copy
+  \fancyfoot[R]{\thepage}
 \fi
-\fancyfoot[R]{\thepage}
 
 \fancypagestyle{title}{
   \fancyhf{}
-  \fancyfoot[R]{\thepage}
+  \ifletter
+    \fancyhead[L]{\sc NEJLT Letter}
+  \fi
   \ifcrversion
     \fancyfoot[C]{Northern European Journal of Language Technology}
-    \ifletter
-      \fancyfoot[C]{\color{nejltblue}Northern European Journal of Language Technology}
-    \fi
   \else
-  % confidential footer for draft
-    \fancyfoot[C]{\sc Confidential NEJLT review copy. Do not distribute.}
+    % confidential header/footer for draft
+    \fancyfoot[C]{\sc\color{flagred} Confidential NEJLT review copy. Do not distribute.}
+    % page numbers only appear on the draft — are added by the editor for final copy
+    \fancyfoot[R]{\thepage}
   \fi
-  \fancyhead{~}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{.8pt}% or however thick
 }
@@ -148,11 +150,10 @@
 
 
 %% LINE NUMBERS FOR DRAFTING
+\RequirePackage{lineno}
 \ifcrversion
 \else
- \RequirePackage{lineno}
  \setlength\linenumbersep{1.5mm}
- \definecolor{flagred}{RGB}{198, 12, 48}
  \renewcommand{\linenumberfont}{\footnotesize\bfseries\textcolor{flagred}}
  \linenumbers
 \fi

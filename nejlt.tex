@@ -10,22 +10,24 @@
 
 \usepackage{nejlt}
 
-% package used only for the template, feel free to remove this
-\usepackage{lipsum}
-
 % manuscript title
 \title{Northern European Journal of Language Technology: Template}
 
-% running head title here
-\chead{Northern European Journal of Language Technology: Template}
+% running head title here – do not change unless full manuscript title is too long for the header
+\makeatletter
+\edef\headtitle{\@title}%
+\makeatother
 
 \author{
 Lois Griffin, Quahog Community College, Rhode Island, USA \and
 Reviewer Two, University of California San Diego, USA {\tt \small strongreject@ucsd.edu} \and
 Margrete Valdemarsdatter, Roskilde, Kalmar Union {\tt \small daisy@hestenettet.dk} \and
 Marc Rebillet, Loop Daddy Institute, YouTube Inc. \and
-Wil E. Coyote, Utopia Planitia, Mars, UFP % we adopt an Earth/Sol-centric naming scheme: if an author affiliation is based elsewhere, please give the planet/system
+Wil E. Coyote, Utopia Planitia, Mars, UFP
 }
+
+% package used only for the template, feel free to remove this
+\usepackage{lipsum}
 
 \begin{document}
 \thispagestyle{title}
